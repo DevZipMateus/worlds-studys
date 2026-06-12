@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worlds Studys</title>
+  <meta name="description" content="Worlds Studys - Papelaria criativa em Várzea Grande/MT. Materiais escolares, artigos de escritório, presentes personalizados e muito mais. Inspire sua criatividade!">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="pt-BR">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Worlds Studys">
+  <meta property="og:description" content="Worlds Studys - Papelaria criativa em Várzea Grande/MT. Materiais escolares, artigos de escritório, presentes personalizados e muito mais. Inspire sua criatividade!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://papelariaword.com.br">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== VARIÁVEIS ===== */
+    :root {
+      --branco: #FAFAFA;
+      --branco-puro: #FFFFFF;
+      --lilas-claro: #EDE0F5;
+      --lilas-suave: #B088C8;
+      --lilas-medio: #9B6DB5;
+      --magenta: #8B44AC;
+      --magenta-escuro: #7C2D9E;
+      --texto-escuro: #2D1B3D;
+      --texto-medio: #5A3E6B;
+      --texto-claro: #8B7299;
+      --sombra-suave: 0 4px 24px rgba(139,68,172,0.10);
+      --sombra-media: 0 8px 40px rgba(139,68,172,0.16);
+      --borda-clara: rgba(176,136,200,0.2);
+      --altura-header: 72px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 112%; overflow-x: hidden; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--branco);
+      color: var(--texto-escuro);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--altura-header);
+      background: rgba(250,250,250,0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--borda-clara);
+      transition: box-shadow 0.3s ease;
+    }
+    header.rolado { box-shadow: var(--sombra-suave); }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icone {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-texto {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--texto-escuro);
+      letter-spacing: -0.02em;
+    }
+    .logo-texto span { color: var(--magenta); }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--texto-medio);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--magenta); background: rgba(139,68,172,0.06); }
+    .btn-header-wa {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(139,68,172,0.28);
+      white-space: nowrap;
+    }
+    .btn-header-wa:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(139,68,172,0.38);
+      background: linear-gradient(135deg, var(--magenta), var(--magenta-escuro));
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      background: none;
+      border: none;
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: rgba(139,68,172,0.06); }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--texto-escuro);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--altura-header);
+      left: 0; right: 0;
+      background: var(--branco-puro);
+      padding: 16px 24px 24px;
+      border-bottom: 1px solid var(--borda-clara);
+      box-shadow: var(--sombra-media);
+      z-index: 998;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile.aberto { display: flex; }
+    .nav-mobile a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--texto-medio);
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--magenta); background: rgba(139,68,172,0.06); }
+    .nav-mobile .link-wa {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white !important;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 8px;
+      border-radius: 50px;
+    }
+
+    /* ===== HERO ===== */
+    #inicio {
+      padding-top: var(--altura-header);
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-fundo {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(155deg, rgba(253,248,255,0.78) 0%, rgba(247,238,254,0.72) 40%, rgba(237,224,245,0.76) 100%),
+        url('https://images.unsplash.com/photo-1505744386214-51dba16a26fc?w=1920&q=80') center/cover no-repeat;
+    }
+    .hero-deco {
+      position: absolute; inset: 0;
+      pointer-events: none; overflow: hidden;
+    }
+    .deco-circulo {
+      position: absolute; border-radius: 50%; opacity: 0.14;
+    }
+    .deco-c1 {
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, var(--lilas-suave), transparent);
+      top: -90px; right: -70px;
+    }
+    .deco-c2 {
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, var(--magenta), transparent);
+      bottom: 8%; left: -70px;
+      opacity: 0.08;
+    }
+    .deco-pontos {
+      position: absolute;
+      top: 18%; right: 8%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .deco-ponto {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--lilas-suave);
+      opacity: 0.38;
+    }
+    .deco-linha {
+      position: absolute;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--lilas-suave), transparent);
+      opacity: 0.25;
+    }
+    .deco-l1 { height: 200px; right: 26%; top: 12%; }
+    .deco-l2 { height: 140px; right: 42%; bottom: 18%; }
+
+    .hero-conteudo {
+      position: relative; z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+    .hero-texto { animation: entradaBaixo 0.9s ease both; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(176,136,200,0.14);
+      border: 1px solid rgba(176,136,200,0.28);
+      color: var(--magenta);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero-texto h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(3.2rem, 7vw, 5.5rem);
+      font-weight: 400;
+      color: var(--texto-escuro);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .hero-texto h1 em { font-style: italic; color: var(--magenta); }
+    .hero-texto h2 {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--texto-medio);
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .hero-texto p {
+      font-size: 1rem;
+      color: var(--texto-claro);
+      max-width: 460px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+    .hero-acoes { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primario {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 24px rgba(139,68,172,0.28);
+    }
+    .btn-primario:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(139,68,172,0.38);
+      background: linear-gradient(135deg, var(--magenta), var(--magenta-escuro));
+    }
+    .btn-secundario {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--magenta);
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(139,68,172,0.38);
+      transition: all 0.25s ease;
+    }
+    .btn-secundario:hover {
+      background: rgba(139,68,172,0.06);
+      border-color: var(--magenta);
+      transform: translateY(-1px);
+    }
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: entradaDireita 1s ease both;
+      animation-delay: 0.2s;
+    }
+    .hero-ilustracao { position: relative; width: 100%; max-width: 460px; }
+    .hero-card-principal {
+      background: white;
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--sombra-media);
+      border: 1px solid var(--borda-clara);
+      position: relative; z-index: 2;
+    }
+    .hero-card-acento {
+      position: absolute;
+      width: 78%; height: 78%;
+      background: linear-gradient(135deg, var(--lilas-claro), rgba(176,136,200,0.28));
+      border-radius: 24px;
+      bottom: -18px; right: -18px;
+      z-index: 1;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .stat-item {
+      background: var(--lilas-claro);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-numero {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--magenta);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.72rem; color: var(--texto-claro); margin-top: 4px; }
+
+    /* ===== BASE SEÇÕES ===== */
+    section { scroll-margin-top: var(--altura-header); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .secao-header { text-align: center; margin-bottom: 60px; }
+    .secao-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--magenta);
+      background: rgba(139,68,172,0.08);
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .secao-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--texto-escuro);
+      margin-bottom: 14px;
+    }
+    .secao-header p {
+      font-size: 1rem;
+      color: var(--texto-claro);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .divisor-secao {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--lilas-suave), var(--magenta));
+      border-radius: 2px;
+      margin: 20px auto 0;
+    }
+
+    /* ===== SOBRE ===== */
+    #sobre {
+      background:
+        linear-gradient(135deg, rgba(250,250,250,0.92) 0%, rgba(237,224,245,0.90) 100%),
+        url('https://images.unsplash.com/photo-1535837487710-a191373a20ae?w=1920&q=80') center/cover no-repeat;
+    }
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .sobre-visual { position: relative; }
+    .sobre-imagem-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--lilas-claro) 0%, rgba(176,136,200,0.25) 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sobre-imagem-inner { text-align: center; padding: 40px; }
+    .sobre-citacao {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--magenta);
+      line-height: 1.45;
+      margin-top: 20px;
+    }
+    .sobre-card-flutuante {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      background: white;
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: var(--sombra-media);
+      border: 1px solid var(--borda-clara);
+    }
+    .sobre-card-flutuante .ano {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--magenta);
+      line-height: 1;
+    }
+    .sobre-card-flutuante .ano-label { font-size: 0.78rem; color: var(--texto-claro); margin-top: 4px; }
+    .sobre-conteudo .secao-tag { margin-bottom: 12px; }
+    .sobre-conteudo h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 500;
+      color: var(--texto-escuro);
+      margin-bottom: 6px;
+    }
+    .sobre-subtitulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--magenta);
+      margin-bottom: 24px;
+    }
+    .sobre-conteudo p {
+      font-size: 0.965rem;
+      color: var(--texto-medio);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .lista-features { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+    .feature-item { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--texto-medio); font-weight: 500; }
+    .feature-ponto {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      flex-shrink: 0;
+    }
+
+    /* ===== MISSÃO VISÃO VALORES ===== */
+    #valores {
+      background:
+        linear-gradient(160deg, rgba(253,248,255,0.92) 0%, rgba(237,224,245,0.90) 50%, rgba(253,248,255,0.92) 100%),
+        url('https://images.unsplash.com/photo-1532072918578-b5583b5b585e?w=1920&q=80') center/cover no-repeat;
+    }
+    .mvv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .mvv-card {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid rgba(176,136,200,0.14);
+      transition: all 0.3s ease;
+      position: relative; overflow: hidden;
+    }
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--lilas-suave), var(--magenta));
+    }
+    .mvv-card:hover { transform: translateY(-4px); box-shadow: var(--sombra-media); }
+    .mvv-icone {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--lilas-claro), rgba(176,136,200,0.2));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .mvv-card h3 { font-size: 1.55rem; font-weight: 600; color: var(--texto-escuro); margin-bottom: 12px; }
+    .mvv-card p { font-size: 0.89rem; color: var(--texto-claro); line-height: 1.75; }
+    .lista-valores { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .lista-valores li { display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: var(--texto-medio); }
+    .lista-valores li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--magenta); flex-shrink: 0;
+    }
+
+    /* ===== PRODUTOS ===== */
+    #produtos {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(237,224,245,0.90) 100%),
+        url('https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?w=1920&q=80') center/cover no-repeat;
+    }
+    .produtos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .produto-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid rgba(176,136,200,0.12);
+      transition: all 0.3s ease;
+    }
+    .produto-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra-media);
+      border-color: rgba(176,136,200,0.28);
+    }
+    .produto-icone {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--lilas-claro), rgba(176,136,200,0.22));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .produto-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--texto-escuro); margin-bottom: 10px; }
+    .produto-card p { font-size: 0.875rem; color: var(--texto-claro); line-height: 1.7; }
+
+    /* ===== CONTATO ===== */
+    #contato {
+      background:
+        linear-gradient(160deg, rgba(237,224,245,0.92) 0%, rgba(253,248,255,0.90) 65%),
+        url('https://images.unsplash.com/photo-1534109284468-ad30ffd1f41d?w=1920&q=80') center/cover no-repeat;
+    }
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contato-info .secao-tag { margin-bottom: 12px; }
+    .contato-info h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 500;
+      color: var(--texto-escuro);
+      margin-bottom: 6px;
+    }
+    .contato-subtitulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--magenta);
+      font-size: 1.12rem;
+      margin-bottom: 36px;
+    }
+    .lista-contato { display: flex; flex-direction: column; gap: 20px; }
+    .contato-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contato-icone {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: var(--sombra-suave);
+    }
+    .contato-texto { padding-top: 4px; }
+    .contato-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--texto-claro); margin-bottom: 4px; }
+    .contato-valor { font-size: 0.94rem; color: var(--texto-escuro); font-weight: 500; overflow-wrap: break-word; word-break: break-word; }
+    .contato-valor a { color: var(--magenta); transition: color 0.2s; }
+    .contato-valor a:hover { color: var(--magenta-escuro); }
+    .horario-box {
+      background: linear-gradient(135deg, var(--lilas-claro), rgba(176,136,200,0.12));
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      border: 1px solid rgba(176,136,200,0.2);
+    }
+    .horario-box h4 {
+      font-size: 0.78rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--magenta); margin-bottom: 8px;
+    }
+    .horario-box p { font-size: 0.9rem; color: var(--texto-medio); }
+    .redes-sociais { margin-top: 32px; }
+    .redes-sociais h3 { font-size: 1.2rem; font-weight: 500; color: var(--texto-escuro); margin-bottom: 14px; }
+    .links-sociais { display: flex; gap: 12px; }
+    .link-social {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--sombra-suave);
+      transition: all 0.25s ease;
+      border: 1px solid var(--borda-clara);
+    }
+    .link-social:hover {
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-media);
+    }
+    .link-social:hover svg * { stroke: white !important; fill: white !important; }
+    .contato-cta-box {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--sombra-media);
+      border: 1px solid var(--borda-clara);
+    }
+    .contato-cta-box h3 { font-size: 1.8rem; font-weight: 500; color: var(--texto-escuro); margin-bottom: 12px; }
+    .contato-cta-box p { color: var(--texto-claro); font-size: 0.94rem; margin-bottom: 28px; }
+    .btn-wa-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.28);
+      width: 100%;
+    }
+    .btn-wa-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.38);
+    }
+    .cnpj-rodape { font-size: 0.78rem; color: var(--texto-claro); text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--borda-clara); }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--texto-escuro); color: rgba(255,255,255,0.65); padding: 48px 0 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .footer-topo {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-marca .logo-texto { color: white; margin-bottom: 12px; display: block; }
+    .footer-marca p { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.52); }
+    .footer-marca .cnpj-info { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 12px; }
+    .footer-links h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: white; margin-bottom: 16px;
+    }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links ul li a { font-size: 0.875rem; color: rgba(255,255,255,0.52); transition: color 0.2s; }
+    .footer-links ul li a:hover { color: var(--lilas-suave); }
+    .footer-base {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-base p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .links-sociais-footer { display: flex; gap: 10px; }
+    .link-social-footer {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.25s ease;
+    }
+    .link-social-footer:hover { background: var(--magenta); transform: translateY(-1px); }
+
+    /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+    .wa-flutuante {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 9999;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.38);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wa-flutuante:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.48);
+    }
+
+    /* ===== ANIMAÇÕES — KEYFRAMES ===== */
+    @keyframes entradaBaixo {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes entradaDireita {
+      from { opacity: 0; transform: translateX(36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes entradaEsquerda {
+      from { opacity: 0; transform: translateX(-36px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes entradaEscala {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes entradaHeader {
+      from { opacity: 0; transform: translateY(-100%); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-12px); }
+    }
+    @keyframes respirar {
+      0%, 100% { transform: scale(1);    opacity: 0.14; }
+      50%       { transform: scale(1.12); opacity: 0.22; }
+    }
+    @keyframes girarLento {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes expandirLinha {
+      from { width: 0; }
+      to   { width: 56px; }
+    }
+    @keyframes pulsarBorda {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(139,68,172,0); }
+      50%       { box-shadow: 0 0 0 8px rgba(139,68,172,0.12); }
+    }
+    @keyframes gradienteHero {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes pontoFade {
+      0%, 100% { opacity: 0.15; }
+      50%       { opacity: 0.55; }
+    }
+
+    /* ===== HEADER ANIMADO ===== */
+    header { animation: entradaHeader 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+
+    /* ===== HERO — CASCATA ===== */
+    .hero-badge    { animation: entradaBaixo 0.7s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.05s; }
+    .hero-texto h1 { animation: entradaBaixo 0.8s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.18s; }
+    .hero-texto h2 { animation: entradaBaixo 0.8s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.32s; }
+    .hero-texto p  { animation: entradaBaixo 0.8s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.44s; }
+    .hero-acoes    { animation: entradaBaixo 0.8s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.56s; }
+    .hero-texto    { animation: none; } /* remove a animação genérica do container */
+    .hero-visual   { animation: entradaDireita 1s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.3s; }
+
+    /* Card da hero flutua suavemente */
+    .hero-card-principal { animation: flutuar 5s ease-in-out infinite; animation-delay: 1.2s; }
+
+    /* Círculos decorativos "respiram" */
+    .deco-c1 { animation: respirar 7s ease-in-out infinite; }
+    .deco-c2 { animation: respirar 9s ease-in-out infinite; animation-delay: 2s; }
+
+    /* Pontos piscam de forma suave e aleatória */
+    .deco-ponto:nth-child(odd)  { animation: pontoFade 4s ease-in-out infinite; }
+    .deco-ponto:nth-child(even) { animation: pontoFade 4s ease-in-out infinite; animation-delay: 2s; }
+
+    /* ===== OVERFLOW SECTIONS (evita scroll lateral por transforms) ===== */
+    #sobre, #valores, #produtos, #contato { overflow-x: hidden; }
+
+    /* ===== SCROLL REVEAL — VARIANTES ===== */
+    .revelar {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .revelar.visivel { opacity: 1; transform: translateY(0); }
+
+    .revelar-esq {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .revelar-esq.visivel { opacity: 1; transform: translateX(0); }
+
+    .revelar-dir {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .revelar-dir.visivel { opacity: 1; transform: translateX(0); }
+
+    .revelar-escala {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .revelar-escala.visivel { opacity: 1; transform: scale(1); }
+
+    /* ===== DIVISOR ANIMADO ===== */
+    .divisor-secao {
+      width: 0;
+      transition: width 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s;
+    }
+    .visivel .divisor-secao,
+    .divisor-secao.animado { width: 56px; }
+
+    /* ===== ÍCONES INTERATIVOS ===== */
+    .produto-icone { transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .produto-card:hover .produto-icone { transform: scale(1.18) rotate(-6deg); }
+
+    .mvv-icone { transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+    .mvv-card:hover .mvv-icone { transform: scale(1.12) rotate(8deg); }
+
+    .contato-icone { transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1); }
+    .contato-item:hover .contato-icone { transform: scale(1.14); }
+
+    /* ===== LINK SOCIAL — HOVER MELHORADO ===== */
+    .link-social svg { transition: transform 0.3s ease; }
+    .link-social:hover svg { transform: scale(1.15); }
+
+    /* ===== BOTÃO WHATSAPP FLUTUANTE — PULSO ===== */
+    .wa-flutuante { animation: pulsarBorda 3.5s ease-in-out infinite; animation-delay: 2s; }
+
+    /* ===== SOBRE — CARD FLUTUANTE PULSO ===== */
+    .sobre-card-flutuante { animation: entradaEscala 0.7s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.6s; }
+
+    /* ===== FEATURE ITEMS — MICRO HOVER ===== */
+    .feature-item { transition: transform 0.25s ease, color 0.2s; }
+    .feature-item:hover { transform: translateX(6px); color: var(--magenta); }
+    .feature-item:hover .feature-ponto { transform: scale(1.5); }
+    .feature-ponto { transition: transform 0.25s ease; }
+
+    /* ===== LISTA VALORES — MICRO HOVER ===== */
+    .lista-valores li { transition: transform 0.25s ease, color 0.2s; }
+    .lista-valores li:hover { transform: translateX(6px); color: var(--magenta-escuro); }
+
+    /* ===== STAT ITEMS ===== */
+    .stat-item { transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+    .stat-item:hover { transform: scale(1.06); }
+
+    /* ===== BOTÃO INÍCIO — HEADER ===== */
+    .btn-nav-inicio {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+      border: 1.5px solid rgba(139,68,172,0.3) !important;
+      border-radius: 50px !important;
+      padding: 6px 14px !important;
+      color: var(--magenta) !important;
+      font-weight: 600 !important;
+      transition: all 0.22s ease !important;
+    }
+    .btn-nav-inicio:hover {
+      background: rgba(139,68,172,0.08) !important;
+      border-color: var(--magenta) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* ===== BOTÃO INÍCIO — FOOTER ===== */
+    .btn-footer-inicio {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 7px 16px;
+      border-radius: 50px;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+    .btn-footer-inicio:hover {
+      color: white;
+      border-color: var(--lilas-suave);
+      background: rgba(176,136,200,0.12);
+      transform: translateY(-2px);
+    }
+    .btn-footer-inicio svg { transition: transform 0.22s ease; }
+    .btn-footer-inicio:hover svg { transform: translateY(-2px); }
+
+    /* ===== FOOTER LINKS ===== */
+    .footer-links ul li a {
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .footer-links ul li a:hover { transform: translateX(4px); }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 1024px) {
+      .mvv-grid,
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-topo { grid-template-columns: 1fr 1fr; }
+      .footer-topo > :first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      nav, .btn-header-wa { display: none; }
+      .hamburger { display: flex; }
+      .hero-conteudo {
+        grid-template-columns: 1fr;
+        padding: 48px 20px 64px;
+        gap: 40px;
+      }
+      .hero-visual { order: -1; }
+      .hero-card-principal { padding: 24px; }
+      /* Sem overflow no card accent em mobile */
+      .hero-card-acento { bottom: -10px; right: -10px; }
+      /* Ocultar pontos deco em mobile para não vazar */
+      .deco-pontos { display: none; }
+      .deco-linha  { display: none; }
+
+      #sobre > div,
+      #valores > div,
+      #produtos > div,
+      #contato > div { padding: 64px 0 !important; }
+
+      .sobre-grid, .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+      /* Card flutuante responsivo */
+      .sobre-visual { padding-bottom: 32px; }
+      .sobre-card-flutuante { bottom: 0; right: 0; }
+
+      .mvv-grid { grid-template-columns: repeat(2, 1fr); }
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-topo { grid-template-columns: 1fr; gap: 28px; }
+      .secao-header { margin-bottom: 40px; }
+    }
+    @media (max-width: 560px) {
+      .mvv-grid,
+      .produtos-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-acoes { flex-direction: column; }
+      .btn-primario, .btn-secundario { width: 100%; justify-content: center; }
+      .contato-cta-box { padding: 28px 20px; }
+      .contato-grid { gap: 32px; }
+      .footer-base { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+    @media (max-width: 360px) {
+      .header-inner { padding: 0 16px; }
+      .logo-texto { font-size: 1.25rem; }
+      .hero-conteudo { padding: 40px 16px 56px; }
+      .container { padding: 0 16px; }
+      .hero-texto h1 { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#inicio" class="logo" aria-label="Worlds Studys — ir para o início">
+        <img src="1780924728476_b3966fd7_7331_4d30_83da_9a0f4141a33f.png" alt="Worlds Studys" style="height: 38px; width: auto;">
+      </a>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <a href="#inicio" class="btn-nav-inicio">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Início
+        </a>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a href="https://wa.me/5565996969828" class="btn-header-wa" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Fale conosco
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Nav mobile -->
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#produtos">Produtos</a>
+    <a href="vitrine.html">Vitrine</a>
+    <a href="#contato">Contato</a>
+    <a href="https://wa.me/5565996969828" class="link-wa" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="inicio" aria-labelledby="titulo-hero">
+    <div class="hero-fundo" aria-hidden="true"></div>
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-circulo deco-c1"></div>
+      <div class="deco-circulo deco-c2"></div>
+      <div class="deco-pontos">
+        <div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div>
+        <div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div>
+        <div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div>
+        <div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div>
+        <div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div><div class="deco-ponto"></div>
+      </div>
+      <div class="deco-linha deco-l1"></div>
+      <div class="deco-linha deco-l2"></div>
+    </div>
+
+    <div class="hero-conteudo">
+      <div class="hero-texto">
+        <div class="hero-badge" aria-label="Desde 2022, Várzea Grande MT">
+          <svg width="9" height="9" viewBox="0 0 9 9" fill="currentColor" aria-hidden="true"><circle cx="4.5" cy="4.5" r="4.5"/></svg>
+          Desde 2022 · Várzea Grande, MT
+        </div>
+        <h1 id="titulo-hero">Worlds <em>Studys</em></h1>
+        <h2>Onde a criatividade encontra o papel</h2>
+        <p>Papelaria criativa com produtos que inspiram, organizam e tornam cada momento de estudo, leitura e trabalho mais especial e colorido.</p>
+        <div class="hero-acoes">
+          <a href="https://wa.me/5565996969828" class="btn-primario" target="_blank" rel="noopener noreferrer" aria-label="Fazer pedido pelo WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Fazer pedido
+          </a>
+          <a href="#sobre" class="btn-secundario">Nossa história</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-ilustracao">
+          <div class="hero-card-principal">
+            <div style="text-align:center; padding: 16px 0 8px;">
+              <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14" y="8" width="40" height="52" rx="6" fill="#EDE0F5"/>
+                <rect x="20" y="8" width="5" height="52" rx="2.5" fill="#B088C8"/>
+                <rect x="28" y="22" width="19" height="2.5" rx="1.25" fill="#9B6DB5" opacity="0.55"/>
+                <rect x="28" y="29" width="15" height="2.5" rx="1.25" fill="#9B6DB5" opacity="0.45"/>
+                <rect x="28" y="36" width="17" height="2.5" rx="1.25" fill="#9B6DB5" opacity="0.45"/>
+                <rect x="28" y="43" width="11" height="2.5" rx="1.25" fill="#9B6DB5" opacity="0.35"/>
+                <rect x="49" y="5" width="7" height="22" rx="3" fill="#8B44AC" transform="rotate(28 49 5)"/>
+                <path d="M45 46 L49 50 L47 53 Z" fill="#7C2D9E"/>
+                <path d="M59 18 L60.4 22.2 L64.8 22.2 L61.5 24.8 L62.7 29 L59 26.5 L55.3 29 L56.5 24.8 L53.2 22.2 L57.6 22.2 Z" fill="#B088C8" opacity="0.75"/>
+              </svg>
+              <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--texto-medio); margin-top:14px; line-height:1.5;">"Transformar criatividade em experiências que inspiram"</p>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-numero" data-contador="3" data-sufixo="+">0+</div>
+                <div class="stat-label">Anos no mercado</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-numero" data-contador="100" data-sufixo="%">0%</div>
+                <div class="stat-label">Com carinho</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card-acento"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE NÓS ===== -->
+  <section id="sobre" aria-labelledby="titulo-sobre">
+    <div style="padding: 100px 0;">
+      <div class="container">
+        <div class="sobre-grid">
+          <div class="sobre-visual revelar-esq">
+            <div class="sobre-imagem-placeholder" role="img" aria-label="Ilustração da história da Worlds Studys">
+              <div class="sobre-imagem-inner">
+                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="44" cy="44" r="42" stroke="#B088C8" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+                  <rect x="24" y="28" width="40" height="32" rx="5" fill="white" stroke="#B088C8" stroke-width="1.5"/>
+                  <path d="M44 28 L44 60" stroke="#B088C8" stroke-width="1.5"/>
+                  <path d="M27 36 L41 36" stroke="#9B6DB5" stroke-width="1.2" opacity="0.6"/>
+                  <path d="M27 42 L41 42" stroke="#9B6DB5" stroke-width="1.2" opacity="0.5"/>
+                  <path d="M27 48 L41 48" stroke="#9B6DB5" stroke-width="1.2" opacity="0.4"/>
+                  <path d="M47 36 L61 36" stroke="#9B6DB5" stroke-width="1.2" opacity="0.6"/>
+                  <path d="M47 42 L61 42" stroke="#9B6DB5" stroke-width="1.2" opacity="0.5"/>
+                  <path d="M47 48 L61 48" stroke="#9B6DB5" stroke-width="1.2" opacity="0.4"/>
+                  <circle cx="44" cy="18" r="7" fill="#EDE0F5" stroke="#B088C8" stroke-width="1.5"/>
+                  <path d="M41 18 L43 20 L47 16" stroke="#8B44AC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M30 68 Q44 74 58 68" stroke="#8B44AC" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+                </svg>
+                <p class="sobre-citacao">"Um sonho de mãe e filha que se tornou realidade"</p>
+              </div>
+            </div>
+            <div class="sobre-card-flutuante">
+              <div class="ano">2022</div>
+              <div class="ano-label">Fundação</div>
+            </div>
+          </div>
+
+          <div class="sobre-conteudo revelar-dir" style="transition-delay: 0.1s;">
+            <div class="secao-tag">Nossa história</div>
+            <h2 id="titulo-sobre">Uma história de amor pela papelaria</h2>
+            <p class="sobre-subtitulo">Nascida do sonho de uma filha, alimentada pelo coração de uma mãe</p>
+
+            <p>A Worldsstudys nasceu em 2022 a partir de um sonho muito especial: o desejo da minha filha de ter uma loja de papelaria virtual.</p>
+
+            <p>Inspirada pelo entusiasmo dela e pela paixão de ler livros e por itens que ajudam a organizar, criar e transformar a rotina de estudos e leituras, decidi embarcar nessa aventura. O que começou como um sonho compartilhado entre mãe e filha logo se transformou em um projeto cheio de dedicação, carinho e propósito.</p>
+
+            <p>Desde então, buscamos oferecer produtos que inspirem criatividade, organização e motivação, tornando cada momento de estudo, leitura, trabalho ou planejamento mais especial. Acreditamos que uma simples caneta, um caderno ou um planner podem fazer parte de grandes histórias.</p>
+
+            <div class="lista-features" role="list">
+              <div class="feature-item revelar" style="transition-delay:0.05s;" role="listitem">
+                <div class="feature-ponto" aria-hidden="true"></div>
+                Produtos que inspiram criatividade e organização
+              </div>
+              <div class="feature-item revelar" style="transition-delay:0.12s;" role="listitem">
+                <div class="feature-ponto" aria-hidden="true"></div>
+                Atendimento personalizado e com carinho
+              </div>
+              <div class="feature-item revelar" style="transition-delay:0.19s;" role="listitem">
+                <div class="feature-ponto" aria-hidden="true"></div>
+                Qualidade e inovação em cada detalhe
+              </div>
+              <div class="feature-item revelar" style="transition-delay:0.26s;" role="listitem">
+                <div class="feature-ponto" aria-hidden="true"></div>
+                Presentes únicos para momentos especiais
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSÃO VISÃO VALORES ===== -->
+  <section id="valores" aria-labelledby="titulo-valores">
+    <div style="padding: 100px 0;">
+      <div class="container">
+        <div class="secao-header revelar">
+          <div class="secao-tag">Nossa essência</div>
+          <h2 id="titulo-valores">Missão, visão e valores</h2>
+          <p>Os pilares que guiam cada produto, cada atendimento e cada decisão da nossa empresa.</p>
+          <div class="divisor-secao" aria-hidden="true"></div>
+        </div>
+
+        <div class="mvv-grid">
+          <div class="mvv-card revelar-escala">
+            <div class="mvv-icone" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3>Missão</h3>
+            <p>Inspirar a criatividade, a organização e a expressão pessoal por meio de produtos de papelaria criativa, oferecendo qualidade, inovação e uma experiência encantadora. Buscamos transformar ideias em momentos especiais e tornar o dia a dia mais leve, colorido e produtivo.</p>
+          </div>
+
+          <div class="mvv-card revelar-escala" style="transition-delay: 0.1s;">
+            <div class="mvv-icone" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3>Visão</h3>
+            <p>Ser reconhecida como uma papelaria de referência, oferecendo produtos inovadores e criativos que contribuam para o aprendizado, a organização e o desenvolvimento pessoal dos clientes, tornando-se a primeira escolha quando pensarem em papelaria.</p>
+          </div>
+
+          <div class="mvv-card revelar-escala" style="transition-delay: 0.2s;">
+            <div class="mvv-icone" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Valores</h3>
+            <ul class="lista-valores" role="list">
+              <li>Compromisso com o cliente</li>
+              <li>Qualidade e alto padrão</li>
+              <li>Criatividade e inovação</li>
+              <li>Ética e transparência</li>
+              <li>Respeito às pessoas</li>
+              <li>Educação e desenvolvimento</li>
+              <li>Sustentabilidade</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUTOS ===== -->
+  <section id="produtos" aria-labelledby="titulo-produtos">
+    <div style="padding: 100px 0;">
+      <div class="container">
+        <div class="secao-header revelar">
+          <div class="secao-tag">O que oferecemos</div>
+          <h2 id="titulo-produtos">Nossos produtos</h2>
+          <p>Uma seleção cuidadosa de itens que unem funcionalidade, criatividade e inspiração para o seu dia a dia.</p>
+          <div class="divisor-secao" aria-hidden="true"></div>
+        </div>
+
+        <div class="produtos-grid">
+          <div class="produto-card revelar-escala">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3>Materiais escolares</h3>
+            <p>Cadernos, pastas, fichários, agendas e tudo o que você precisa para organizar sua vida escolar com estilo e funcionalidade.</p>
+          </div>
+
+          <div class="produto-card revelar-escala" style="transition-delay: 0.05s;">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </div>
+            <h3>Artigos de escritório</h3>
+            <p>Canetas, lápis, marcadores, clipes, fitas adesivas e acessórios que tornam seu espaço de trabalho mais produtivo e organizado.</p>
+          </div>
+
+          <div class="produto-card revelar-escala" style="transition-delay: 0.1s;">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <h3>Papelaria criativa</h3>
+            <p>Washi tapes, stickers, papéis especiais, blocos e itens para journaling, bullet journal e projetos criativos dos mais diversos.</p>
+          </div>
+
+          <div class="produto-card revelar-escala" style="transition-delay: 0.15s;">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+            </div>
+            <h3>Acessórios de organização</h3>
+            <p>Planners, organizadores de mesa, porta-canetas, pastas e sistemas de organização para manter tudo no seu lugar.</p>
+          </div>
+
+          <div class="produto-card revelar-escala" style="transition-delay: 0.2s;">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 12 20 22 4 22 4 12"/>
+                <rect x="2" y="7" width="20" height="5"/>
+                <line x1="12" y1="22" x2="12" y2="7"/>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+              </svg>
+            </div>
+            <h3>Presentes personalizados</h3>
+            <p>Kits especiais, caixas temáticas e presentes criativos para datas especiais. Escolha com carinho e surpreenda quem você ama.</p>
+          </div>
+
+          <div class="produto-card revelar-escala" style="transition-delay: 0.25s;">
+            <div class="produto-icone" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3>Brindes corporativos</h3>
+            <p>Soluções criativas para empresas que desejam presentear colaboradores e clientes com itens de papelaria de qualidade.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 52px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;" class="revelar">
+          <a href="vitrine.html" class="btn-primario" style="display: inline-flex;" aria-label="Ver vitrine online">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Ver vitrine online
+          </a>
+          <a href="https://wa.me/5565996969828" class="btn-primario" target="_blank" rel="noopener noreferrer" style="display: inline-flex;" aria-label="Ver catálogo completo pelo WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Solicitar catálogo completo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA VITRINE ===== -->
+  <section aria-label="Acesse nossa vitrine">
+    <div style="padding: 72px 0; background: linear-gradient(135deg, var(--magenta), var(--magenta-escuro));">
+      <div class="container">
+        <div style="text-align: center; max-width: 640px; margin: 0 auto;" class="revelar">
+          <p style="font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 14px;">Compre agora</p>
+          <h2 style="font-family:'Cormorant Garamond',serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 500; color: white; margin-bottom: 16px; line-height: 1.2;">Explore nossa vitrine online</h2>
+          <p style="color: rgba(255,255,255,0.78); font-size: 1rem; margin-bottom: 32px; line-height: 1.7;">Navegue pelos nossos produtos, veja preços e faça seu pedido com praticidade — tudo em um só lugar.</p>
+          <a href="vitrine.html" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: var(--magenta); padding: 14px 32px; border-radius: 50px; font-size: 1rem; font-weight: 700; transition: all 0.25s ease; box-shadow: 0 6px 24px rgba(0,0,0,0.18);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Acessar vitrine
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section id="contato" aria-labelledby="titulo-contato">
+    <div style="padding: 100px 0;">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info revelar-esq">
+            <div class="secao-tag">Fale conosco</div>
+            <h2 id="titulo-contato">Entre em contato</h2>
+            <p class="contato-subtitulo">Estamos aqui para atender você com atenção e carinho</p>
+
+            <div class="lista-contato" role="list">
+              <div class="contato-item revelar" style="transition-delay:0.05s;" role="listitem">
+                <div class="contato-icone" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contato-texto">
+                  <div class="contato-label">Telefone / WhatsApp</div>
+                  <div class="contato-valor"><a href="https://wa.me/5565996969828" target="_blank" rel="noopener noreferrer">(65) 99696-9828</a></div>
+                </div>
+              </div>
+
+              <div class="contato-item revelar" style="transition-delay:0.13s;" role="listitem">
+                <div class="contato-icone" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contato-texto">
+                  <div class="contato-label">E-mail</div>
+                  <div class="contato-valor"><a href="mailto:worldsstudysisa@gmail.com">worldsstudysisa@gmail.com</a></div>
+                </div>
+              </div>
+
+              <div class="contato-item revelar" style="transition-delay:0.21s;" role="listitem">
+                <div class="contato-icone" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="contato-texto">
+                  <div class="contato-label">Endereço</div>
+                  <div class="contato-valor">Rua Ary Paes Barreto, Lot Manga — Pte. Nova<br>Várzea Grande — MT, 78115-651</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="horario-box" role="region" aria-label="Horário de funcionamento">
+              <h4>Horário de funcionamento</h4>
+              <p>Segunda a sábado: 08h00 às 17h00</p>
+            </div>
+
+            <div class="redes-sociais">
+              <h3>Siga-nos nas redes sociais</h3>
+              <div class="links-sociais" role="list">
+                <a href="https://www.instagram.com/worldsstudys/" class="link-social" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Worlds Studys" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+                <a href="https://wa.me/5565996969828" class="link-social" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Worlds Studys" role="listitem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--magenta)" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="revelar-dir" style="transition-delay: 0.1s;">
+            <div class="contato-cta-box">
+              <h3>Faça seu pedido agora</h3>
+              <p>Entre em contato pelo WhatsApp e descubra nossos produtos disponíveis. Atendimento rápido, personalizado e com muito carinho!</p>
+              <a href="https://wa.me/5565996969828" class="btn-wa-cta" target="_blank" rel="noopener noreferrer" aria-label="Fazer pedido pelo WhatsApp">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                Falar no WhatsApp
+              </a>
+              <p class="cnpj-rodape">CNPJ: 58.569.523/0001-33</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-topo">
+        <div class="footer-marca">
+          <img src="1780924728476_b3966fd7_7331_4d30_83da_9a0f4141a33f.png" alt="Worlds Studys" style="height: 36px; width: auto; margin-bottom: 12px; display: block; filter: brightness(0) invert(1);">
+          <p>Papelaria criativa que inspira, organiza e transforma. Nascida de um sonho, construída com amor.</p>
+          <p class="cnpj-info">CNPJ: 58.569.523/0001-33 · Worlds Studys</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#valores">Missão e valores</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="vitrine.html">Vitrine</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="tel:+5565996969828">(65) 99696-9828</a></li>
+            <li><a href="mailto:worldsstudysisa@gmail.com">worldsstudysisa@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/worldsstudys/" target="_blank" rel="noopener noreferrer">@worldsstudys</a></li>
+            <li><a href="https://wa.me/5565996969828" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <p>&copy; 2026 Worlds Studys. Todos os direitos reservados.</p>
+        <a href="#inicio" class="btn-footer-inicio" aria-label="Voltar ao início da página">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+          Voltar ao início
+        </a>
+        <div class="links-sociais-footer">
+          <a href="https://www.instagram.com/worldsstudys/" class="link-social-footer" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/5565996969828" class="link-social-footer" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.6)" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
+  <a href="https://wa.me/5565996969828" class="wa-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Worlds Studys pelo WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <div id="root"></div>
+
+  <!-- Rodapé MonteSite - Atualização Automática -->
+  <div id="montesite-footer-badge"></div>
+  <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+  <script>
+    /* ---- Header scroll ---- */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('rolado', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ---- Menu mobile ---- */
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => {
+      const aberto = navMobile.classList.toggle('aberto');
+      hamburger.setAttribute('aria-expanded', aberto);
+    });
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('aberto');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ---- Scroll reveal unificado (todas as variantes) ---- */
+    const CLASSES_REVEAL = ['.revelar', '.revelar-esq', '.revelar-dir', '.revelar-escala'];
+    const obsReveal = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visivel');
+          // Anima o divisor filho, se houver
+          const div = entry.target.querySelector('.divisor-secao');
+          if (div) div.classList.add('animado');
+          obsReveal.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+
+    document.querySelectorAll(CLASSES_REVEAL.join(',')).forEach(el => obsReveal.observe(el));
+
+    /* ---- Contador animado nos stats ---- */
+    function animarContador(el) {
+      const alvo   = parseInt(el.dataset.contador, 10);
+      const sufixo = el.dataset.sufixo || '';
+      const duracao = 1400;
+      const inicio = performance.now();
+      function step(agora) {
+        const progresso = Math.min((agora - inicio) / duracao, 1);
+        // easeOutExpo
+        const ease = progresso === 1 ? 1 : 1 - Math.pow(2, -10 * progresso);
+        el.textContent = Math.round(ease * alvo) + sufixo;
+        if (progresso < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const obsContador = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animarContador(entry.target);
+          obsContador.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-contador]').forEach(el => obsContador.observe(el));
+
+    /* ---- Nav ativa por seção ---- */
+    const secoes   = document.querySelectorAll('section[id]');
+    const linksNav = document.querySelectorAll('nav a[href^="#"]');
+    const obsSecao = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          linksNav.forEach(link => {
+            const ativa = link.getAttribute('href') === '#' + entry.target.id;
+            link.style.color = ativa ? 'var(--magenta)' : '';
+            link.style.fontWeight = ativa ? '600' : '';
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+    secoes.forEach(s => obsSecao.observe(s));
+
+    /* ---- Ripple nos botões primários ---- */
+    document.querySelectorAll('.btn-primario, .btn-wa-cta').forEach(btn => {
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.addEventListener('click', function(e) {
+        const r = document.createElement('span');
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        r.style.cssText = `
+          position:absolute; border-radius:50%; pointer-events:none;
+          width:${size}px; height:${size}px;
+          left:${e.clientX - rect.left - size/2}px;
+          top:${e.clientY - rect.top - size/2}px;
+          background:rgba(255,255,255,0.3);
+          transform:scale(0); animation:ripple 0.55s ease-out forwards;
+        `;
+        btn.appendChild(r);
+        r.addEventListener('animationend', () => r.remove());
+      });
+    });
+  </script>
+  <style>
+    @keyframes ripple {
+      to { transform: scale(2.8); opacity: 0; }
+    }
+  </style>
+</body>
+</html>

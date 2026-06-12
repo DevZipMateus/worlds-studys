@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://papelariaword.com.br/sitemap.xml

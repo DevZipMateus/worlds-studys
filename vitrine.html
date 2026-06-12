@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração de Vitrine - Worlds Studys</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== VARIÁVEIS ===== */
+    :root {
+      --branco: #FAFAFA;
+      --branco-puro: #FFFFFF;
+      --lilas-claro: #EDE0F5;
+      --lilas-suave: #B088C8;
+      --lilas-medio: #9B6DB5;
+      --magenta: #8B44AC;
+      --magenta-escuro: #7C2D9E;
+      --texto-escuro: #2D1B3D;
+      --texto-medio: #5A3E6B;
+      --texto-claro: #8B7299;
+      --sombra-suave: 0 4px 24px rgba(139,68,172,0.10);
+      --sombra-media: 0 8px 40px rgba(139,68,172,0.16);
+      --borda-clara: rgba(176,136,200,0.2);
+      --altura-header: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--branco);
+      color: var(--texto-escuro);
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      height: var(--altura-header);
+      background: rgba(250,250,250,0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--borda-clara);
+      box-shadow: var(--sombra-suave);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--texto-medio);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--magenta); background: rgba(139,68,172,0.06); }
+    nav a.ativo { color: var(--magenta); font-weight: 600; }
+    .btn-nav-inicio {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+      border: 1.5px solid rgba(139,68,172,0.3) !important;
+      border-radius: 50px !important;
+      padding: 6px 14px !important;
+      color: var(--magenta) !important;
+      font-weight: 600 !important;
+      transition: all 0.22s ease !important;
+    }
+    .btn-nav-inicio:hover {
+      background: rgba(139,68,172,0.08) !important;
+      border-color: var(--magenta) !important;
+    }
+    .btn-header-wa {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--lilas-suave), var(--magenta));
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(139,68,172,0.28);
+      white-space: nowrap;
+    }
+    .btn-header-wa:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(139,68,172,0.38);
+      background: linear-gradient(135deg, var(--magenta), var(--magenta-escuro));
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      background: none;
+      border: none;
+      transition: background 0.2s;
+    }
+    .hamburger:hover { background: rgba(139,68,172,0.06); }
+    .hamburger span {
+      width: 22px; height: 2px;
+      background: var(--texto-escuro);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--altura-header);
+      left: 0; right: 0;
+      background: var(--branco-puro);
+      padding: 16px 24px 24px;
+      border-bottom: 1px solid var(--borda-clara);
+      box-shadow: var(--sombra-media);
+      z-index: 998;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile.aberto { display: flex; }
+    .nav-mobile a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--texto-medio);
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .nav-mobile a:hover { color: var(--magenta); background: rgba(139,68,172,0.06); }
+    .nav-mobile .link-wa {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white !important;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 8px;
+      border-radius: 50px;
+    }
+
+    /* ===== IFRAME ===== */
+    .vitrine-iframe {
+      position: fixed;
+      top: var(--altura-header);
+      left: 0;
+      right: 0;
+      bottom: 63px;
+      width: 100%;
+      height: calc(100vh - 135px);
+      border: none;
+      display: block;
+    }
+
+    /* ===== BADGE MONTESITE ===== */
+    #montesite-footer-badge {
+      position: fixed !important;
+      bottom: 0 !important;
+      height: 63px !important;
+      z-index: 10 !important;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      nav, .btn-header-wa { display: none; }
+      .hamburger { display: flex; }
+
+      .vitrine-iframe {
+        height: calc(100vh - 185px) !important;
+        bottom: 113px !important;
+      }
+    }
+    @media (max-width: 360px) {
+      .header-inner { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="World Studys — ir para o início">
+        <img src="1780924728476_b3966fd7_7331_4d30_83da_9a0f4141a33f.png" alt="World Studys" style="height: 38px; width: auto;">
+      </a>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <a href="index.html" class="btn-nav-inicio">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Início
+        </a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#produtos">Produtos</a>
+        <a href="vitrine.html" class="ativo">Vitrine</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+
+      <a href="https://wa.me/5565996969828" class="btn-header-wa" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        Fale conosco
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Nav mobile -->
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+    <a href="index.html">Início</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#produtos">Produtos</a>
+    <a href="vitrine.html">Vitrine</a>
+    <a href="index.html#contato">Contato</a>
+    <a href="https://wa.me/5565996969828" class="link-wa" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+  </nav>
+
+  <!-- ===== VITRINE IFRAME ===== -->
+  <iframe
+    class="vitrine-iframe"
+    src="https://papelariaword.egestor.com.br/vitrine/"
+    title="Vitrine World Studys"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => {
+      const aberto = navMobile.classList.toggle('aberto');
+      hamburger.setAttribute('aria-expanded', aberto);
+    });
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('aberto');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
